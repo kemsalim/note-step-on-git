@@ -118,8 +118,10 @@ ALTER DATABASE OPEN READ ONLY;
 ALTER DATABASE RECOVER MANAGED STANDBY DATABASE DISCONNECT USING CURRENT LOGFILE; --atau
 ALTER DATABASE RECOVER MANAGED STANDBY DATABASE DISCONNECT FROM SESSION;
 ```
+```bash
 DGMGRL> EDIT DATABASE 'standby_db' SET STATE='APPLY-OFF';
 DGMGRL> EDIT DATABASE 'standby_db' SET STATE='APPLY-ON';
+```
 
 - Selalu verifikasi status database sebelum dan sesudah switchover.
 - Pastikan tidak ada job penting yang berjalan saat switchover.
